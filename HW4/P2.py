@@ -41,7 +41,7 @@ def P2(dct):
 
     result = set()
 
-    for i in dct:
-        result.add(dct[i])
+    for key in dct:
+        result.add(dct[key])
 
     return len(result)

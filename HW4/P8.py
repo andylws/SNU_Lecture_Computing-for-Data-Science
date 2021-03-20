@@ -12,16 +12,16 @@ that takes two sparse vectors stored as dictionaries and returns a new dictionar
 * Condition: All entries of vector are integers.
 
 
->>>P8({0:1, 6:3}, {0:2, 5:2, 6:2, 7:1})
+>>> P8({0:1, 6:3}, {0:2, 5:2, 6:2, 7:1})
 {0:3, 5:2, 6:5, 7:1}
 
->>>P8({0:1, 6:3}, {0:-1, 5:2, 6:2, 7:1})
+>>> P8({0:1, 6:3}, {0:-1, 5:2, 6:2, 7:1})
 {6: 5, 5: 2, 7: 1}
 
->>>P8({0:1, 6:3}, {0:-1, 1:1, 2:2, 6:-3})
+>>> P8({0:1, 6:3}, {0:-1, 1:1, 2:2, 6:-3})
 {1: 1, 2: 2}
 
->>>P8({0:1, 6:-3}, {0:-1, 6:3})
+>>> P8({0:1, 6:-3}, {0:-1, 6:3})
 {}
 """
 
@@ -45,25 +45,25 @@ def P8(dct1, dct2):
         return vector
 
     def sumVector(v1, v2):
-        result = []
+        resultVector = []
 
-        while len(v1) != 0 and len(v2) != 0:
-            result.append(v1.pop(0) + v2.pop(0))
+        while len(v1) * len(v2) != 0:
+            resultVector.append(v1.pop(0) + v2.pop(0))
 
-        result = result + v1 + v2
+        resultVector = resultVector + v1 + v2
 
-        return result
+        return resultVector
 
     def vectorToDict(v):
-        result = {}
+        resultDict = {}
 
         for i in range(len(v)):
             if v[i] != 0:
-                result[i] = v[i]
+                resultDict[i] = v[i]
             else:
                 continue
 
-        return result
+        return resultDict
 
     vector1 = dictToVector(dct1)
     vector2 = dictToVector(dct2)

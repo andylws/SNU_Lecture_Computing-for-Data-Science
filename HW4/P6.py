@@ -29,7 +29,7 @@ Implement a function that returns the set of keys used in any of the inner dicti
 * Condition 3: There is no case where the input is empty.
 
 
->>>P6({
+>>> P6({
     'jgoodall' : {'surname' : 'Goodall',
                 'forename' : 'Jane',
                 'born' : 1934,

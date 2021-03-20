@@ -8,7 +8,7 @@ if and only if every one of the inner dictionaries has exactly the same keys.
 * Condition 3: There is no case where the input is empty.
 
 
->>>P7({
+>>> P7({
     'jgoodall' : {'surname' : 'Goodall',
                 'forename' : 'Jane',
                 'born' : 1934,
@@ -30,7 +30,7 @@ if and only if every one of the inner dictionaries has exactly the same keys.
 False
 Explanation: The value of 'rfranklin' doesn't contain the 'author' key.)
 
->>>P7({'a':{'aa':123, 'ab':[1,2]}, 'b':{'aa':'bb', 'ab':'cc'}})
+>>> P7({'a':{'aa':123, 'ab':[1,2]}, 'b':{'aa':'bb', 'ab':'cc'}})
 True
 Explanation: All values have exactly the same keys. {'aa', 'ab'}
 
