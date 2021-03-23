@@ -13,8 +13,16 @@ it should return
 
 """
 
-def P2(filename: str) -> list:        
+
+def P2(filename: str) -> list:
     ##### Write your Code Here #####
 
-    return list()
+    file = open(filename, 'r')
+    lines = file.readlines()
+    result = []
+    for line in reversed(lines):
+        result.append(line)
+
+    return result
+
     ##### End of your code #####

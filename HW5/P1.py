@@ -18,11 +18,19 @@ Then return the list of lists.
 
 
 """
-def P1(filename: str) -> list:        
+
+
+def P1(filename: str) -> list:
     ##### Write your Code Here #####
-    
 
-    return list()
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+        strippedLines = []
+        result = []
+        for line in lines:
+            strippedLines.append(line.strip('\n'))
+        for line in strippedLines:
+            result.append(line.split())
+
+    return result
     ##### End of your code #####
-
-
