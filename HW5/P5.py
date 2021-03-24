@@ -38,9 +38,39 @@ radium 88 226
 
 """
 
-def P5(input_filename: str, out_filename: str):        
-    ##### Write your Code Here ##### 
 
+def P5(input_filename: str, out_filename: str):
+    ##### Write your Code Here #####
+    def skipHeader(input_file):
+        line = input_file.readline()
+        while line.startswith('//'):
+            line = input_file.readline()
+        return line
 
+    with open(input_filename, 'r') as input_file, open(out_filename, 'w') as output_file:
+        line = skipHeader(input_file)
+        lines = []
+        noNumsign = []
+        finalLines = []
+
+        while line:
+            lines.append(line)
+            line = input_file.readline()
+
+        for line in lines:
+            noNumsign.append(line.strip('#'))
+
+        for line in noNumsign:
+            if '#' in line:
+                splitLine = line.split('#')
+                for i in range(len(splitLine) - 1):
+                    splitLine[i] = splitLine[i].strip() + '\n'
+                finalLines = finalLines + splitLine
+            else:
+                finalLines.append(line)
+
+        result = ''.join(finalLines)
+        output_file.write(result)
+
+    return
     ##### End of your code #####
-    

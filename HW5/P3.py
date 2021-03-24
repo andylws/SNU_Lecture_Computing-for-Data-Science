@@ -22,9 +22,28 @@ P3 should return below list.
 
 """
 
-def P3(filename: str) -> list:        
-    ##### Write your Code Here #####    
 
-    return list()
+def P3(filename: str) -> list:
+    ##### Write your Code Here #####
+
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+        noComment = []
+        noNewline = []
+        result = []
+
+        for line in lines:
+            if line.startswith('//') or line.startswith('#'):
+                continue
+            else:
+                noComment.append(line)
+
+        for line in noComment:
+            noNewline.append(line.strip('\n'))
+
+        for line in noNewline:
+            splited = line.split("#")
+            result.append(splited[0])
+
+    return result
     ##### End of your code #####
-

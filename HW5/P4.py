@@ -24,8 +24,23 @@ barium,56,137.327
 radium,88,226
 """
 
-def P4(input_filename: str, out_filename: str):        
-    ##### Write your Code Here #####    
 
+def P4(input_filename: str, out_filename: str):
+    ##### Write your Code Here #####
+    with open(input_filename, 'r') as input_file, open(out_filename, 'w') as output_file:
+        lines = input_file.readlines()
+        split = []
+        linesMade = []
+
+        for line in lines:
+            split.append(line.strip('\n').split())
+
+        for line in split:
+            linesMade.append(','.join(line))
+
+        result = '\n'.join(linesMade)
+
+        output_file.write(result)
+
+    return
     ##### End of your code #####
-    
