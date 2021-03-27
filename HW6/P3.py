@@ -28,7 +28,6 @@ class Shape:
     def is_square(self):
         distance_list = self.getDistanceList()
         distance_list.sort()
-        print(distance_list)
 
         if 0 in distance_list:
             return False
