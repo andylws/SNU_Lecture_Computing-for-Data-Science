@@ -27,6 +27,8 @@ class Shape:
 
     def is_square(self):
         distance_list = self.getDistanceList()
+        distance_list.sort()
+        print(distance_list)
 
         if 0 in distance_list:
             return False
@@ -34,9 +36,8 @@ class Shape:
         num_of_same_d = []
         for distance in distance_list:
             num_of_same_d.append(distance_list.count(distance))
-        num_of_same_d.sort()
 
-        if num_of_same_d == [2, 2, 4, 4, 4, 4]:
+        if num_of_same_d == [4, 4, 4, 4, 2, 2]:
             return True
         else:
             return False
