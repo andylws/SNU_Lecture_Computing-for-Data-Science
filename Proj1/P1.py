@@ -24,10 +24,31 @@ Complete P1 function that returns the number of of player 1's wins
 3
 
 """
-def P1(game: list) -> int:        
+
+
+def P1(game: list) -> int:
     ##### Write your Code Here #####
 
-    return -1
+    wins1 = 0
+
+    for current_game in game:
+        if current_game[0] == 'R':
+            if current_game == ['R', 'R', 'R'] or 'P' in current_game:
+                continue
+            else:
+                wins1 = wins1 + 1
+        elif current_game[0] == 'S':
+            if current_game == ['S', 'S', 'S'] or 'R' in current_game:
+                continue
+            else:
+                wins1 = wins1 + 1
+        elif current_game[0] == 'P':
+            if current_game == ['P', 'P', 'P'] or 'S' in current_game:
+                continue
+            else:
+                wins1 = wins1 + 1
+        else:
+            return "ERROR"
+
+    return wins1
     ##### End of your code #####
-
-
