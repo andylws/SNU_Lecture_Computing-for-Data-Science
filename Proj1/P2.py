@@ -23,6 +23,8 @@ False
 
 def P2(n: int) -> bool:
     ##### Write your Code Here #####
+    '''
+    First Solution
 
     def findDivisors(N):
         divisor_list = []
@@ -45,4 +47,25 @@ def P2(n: int) -> bool:
             continue
 
     return False
+
+    '''
+
+    #######################################################
+
+    ''' Second Solution '''
+
+    current_n = n
+    prime_factor_list = []
+
+    for i in range(2, n):
+        if n % i == 0:
+            while current_n % i == 0:
+                current_n = current_n / i
+                prime_factor_list.append(i)
+
+    if len(prime_factor_list) == 2:
+        return True
+
+    return False
+
     ##### End of your code #####
