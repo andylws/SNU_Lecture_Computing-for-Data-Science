@@ -24,11 +24,38 @@ Complete P3 function for which input is the person's info and returns the first 
 
 """
 
-def P3(info:list) -> str:        
+
+def P3(info: list) -> str:
     ##### Write your Code Here #####
-    
-    
-    return '1234567'
+
+    result = ''
+
+    year = info[1] % 100
+    if year < 10:
+        result = '0' + str(year)
+    else:
+        result = str(year)
+
+    if info[2] < 10:
+        result = result + '0' + str(info[2])
+    else:
+        result = result + str(info[2])
+
+    if info[3] < 10:
+        result = result + '0' + str(info[3])
+    else:
+        result = result + str(info[3])
+
+    if info[0] == 'MALE' and info[1] < 2000:
+        result = result + '1'
+    elif info[0] == 'FEMALE' and info[1] < 2000:
+        result = result + '2'
+    elif info[0] == 'MALE' and info[1] >= 2000:
+        result = result + '3'
+    elif info[0] == 'FEMALE' and info[1] >= 2000:
+        result = result + '4'
+    else:
+        return 'INVALID'
+
+    return result
     ##### End of your code #####
-
-
