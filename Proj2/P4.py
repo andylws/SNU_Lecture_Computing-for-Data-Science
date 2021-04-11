@@ -19,7 +19,7 @@ def P4(head: ListNode) -> ListNode:
             self.head = head
             self.start = head
             self.front = ListNode()
-            self.front = head
+            self.front.next = head
             self.curr = head
             self.temp = None
             self.length = 0
@@ -31,6 +31,8 @@ def P4(head: ListNode) -> ListNode:
                 self.length += 1
 
         def lastToFront(self):
+            if self.curr.next == None:
+                return
             while self.curr.next.next != None:
                 self.curr = self.curr.next
 
@@ -45,10 +47,9 @@ def P4(head: ListNode) -> ListNode:
             self.head = self.front.next
             self.front = self.head
             self.checkLength()
-            for i in range(self.length - 1):
+            for i in range(self.length - 2):
                 self.lastToFront()
                 self.front = self.front.next
-                self.start = self.start.next
             return self.head
 
     SLL = ReverseSLL(head)
