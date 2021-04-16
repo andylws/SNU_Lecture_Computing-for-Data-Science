@@ -1,25 +1,29 @@
-#Helper functions: DO NOT MODIFY!!
+# Helper functions: DO NOT MODIFY!!
 # Definition for TreeNode.
+from collections import deque
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
     def printTree(self) -> list:
         result = list()
         thislevel = [self]
         while thislevel:
             nextlevel = list()
-            none_list=1
+            none_list = 1
             for n in thislevel:
-                if n !=None:
-                    none_list=0
+                if n != None:
+                    none_list = 0
                     break
-            if none_list==1:
+            if none_list == 1:
                 return result
-                        
+
             for n in thislevel:
-                if n != None: 
+                if n != None:
                     result.append(n.val)
                     nextlevel.append(n.left)
                     nextlevel.append(n.right)
@@ -27,15 +31,17 @@ class TreeNode:
                     result.append(None)
                     nextlevel.append(None)
                     nextlevel.append(None)
-                    
+
             thislevel = nextlevel
         return result
 
-#Create a BST from a list, then return root node
-from collections import deque
+
+# Create a BST from a list, then return root node
+
 
 def create_linked_bst(arr: list) -> TreeNode:
-    if len(arr) < 1: return None
+    if len(arr) < 1:
+        return None
     n = iter(arr)
     tree = TreeNode(next(n))
     fringe = deque([tree])
