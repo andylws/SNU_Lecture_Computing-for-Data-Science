@@ -17,15 +17,23 @@ def P1(path: str) -> str:
             if cur_dir == '':
                 continue
             elif cur_dir == '.':
+                # solved
+                cur_dir = ''
                 continue
             elif cur_dir == '..':
                 if path_list == []:
+                    # solved
+                    cur_dir = ''
                     continue
                 else:
                     path_list.pop()
             else:
                 path_list.append(cur_dir)
             cur_dir = ''
+
+    # solved
+    if not cur_dir in ['', '.', '..']:
+        path_list.append(cur_dir)
 
     result_path = '/' + '/'.join(path_list)
 
