@@ -1,3 +1,7 @@
+/*
+What happens if you execute the following code and type 10?
+*/
+
 #include <stdio.h>
 #define STOP 0
 

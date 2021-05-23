@@ -1,3 +1,7 @@
+/*
+If you execute the following code, what is printed?
+*/
+
 #include <stdio.h>
 
 int main(void)

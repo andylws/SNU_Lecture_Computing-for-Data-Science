@@ -1,3 +1,7 @@
+/*
+Which of the following statement have different value of j after execution?
+*/
+
 #include <stdio.h>
 
 int main(void)

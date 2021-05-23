@@ -1,3 +1,7 @@
+/*
+What is printed if you execute below code?
+*/
+
 #include <stdio.h>
 #define LETTER '1'
 #define ZERO 0
