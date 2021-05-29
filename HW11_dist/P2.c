@@ -6,10 +6,19 @@
 
 #include <stdio.h>
 
-void main(int argc, char* argv[]){
+void main(int argc, char *argv[])
+{
 	/* Please write your code below */
-	
+	char input_char;
+
+	printf("Enter any alphabet:");
+	scanf("%c", &input_char);
+
+	while (input_char >= 'A')
+	{
+		printf("%c", input_char);
+		input_char--;
+	}
 
 	/* Do not modify below */
 }
-
