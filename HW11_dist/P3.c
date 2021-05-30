@@ -5,30 +5,44 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-/* Please write your code below */	
-int fibonacci(int n){
+/* Please write your code below */
+int fibonacci(int n)
+{
 
-
-	return 0;
+	if (n == 0)
+	{
+		return 1;
+	}
+	else if (n == 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return fibonacci(n - 1) + fibonacci(n - 2);
+	}
 }
 /* Do not modify below */
 
-void main(int argc, char* argv[]){
+void main(int argc, char *argv[])
+{
 
-	if (argc != 2){
+	if (argc != 2)
+	{
 		printf("Enter any natural number n\n");
 	}
 
-	int n = atoi(argv[1]);		
+	int n = atoi(argv[1]);
 
-	if (n < 0){
+	if (n < 0)
+	{
 		printf("No negative number is allowed\n");
 	}
 
 	int f = 0;
 
 	f = fibonacci(n);
-	printf("%d\n",f);	
+	printf("%d\n", f);
 }
-
