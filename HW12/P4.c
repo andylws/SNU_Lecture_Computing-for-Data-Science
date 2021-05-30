@@ -18,7 +18,6 @@ int sumIndivDigits(int input_i)
 
 int P4(int n)
 {
-
     bool self_num = false;
 
     while (!self_num)

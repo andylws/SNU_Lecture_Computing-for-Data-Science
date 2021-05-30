@@ -8,7 +8,6 @@ int P3(int n);
 // You can define other function, but P3 must return answer.
 int P3(int n)
 {
-
     int count = 0;
 
     for (int i = n + 1; i < 2 * n; i++)

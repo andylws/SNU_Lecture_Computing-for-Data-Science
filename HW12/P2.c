@@ -8,7 +8,6 @@ int P2(int n);
 // You can define other function, but P2 must return answer.
 int P2(int n)
 {
-
     bool done = false;
     int result = 0;
 

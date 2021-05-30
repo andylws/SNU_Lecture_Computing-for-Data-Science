@@ -7,7 +7,6 @@ int P1(int n);
 // You can define other function, but P1 must return answer.
 int P1(int n)
 {
-
     if (n == 1)
     {
         return 1;
