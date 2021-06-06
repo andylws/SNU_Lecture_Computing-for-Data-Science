@@ -7,16 +7,14 @@ int main(int argc, char *argv[])
     // YOUR CODE HERE
     FILE *inputFilePtr;
     FILE *outputFilePtr;
-    char num_str[11];
+    char num_str[12];
     char num_char;
 
     inputFilePtr = fopen(input_filename, "r");
     outputFilePtr = fopen(output_filename, "w");
     while (fscanf(inputFilePtr, "%s", num_str) != EOF)
     {
-        num_char = num_str[0];
-        fprintf(outputFilePtr, "%c", num_char);
-        for (int i = 1; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             fprintf(outputFilePtr, "%c", num_str[i]);
         }
