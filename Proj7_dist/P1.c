@@ -44,8 +44,21 @@ addNode:
 
   /* Write your code here */	
 
+  struct Node * nodeArray[length];
 
+  curr = head;
 
+  for (int i = 0; i < length; i++) {
+    nodeArray[i] = curr;
+    curr = curr->next;
+  }
+
+  for (int i = length - 1; i > 0; i--) {
+    nodeArray[i]->next = nodeArray[i - 1];
+  }
+
+  nodeArray[0]->next = NULL;
+  head = nodeArray[length - 1];
 
 	/* Do not modify below */	
   curr = head;
