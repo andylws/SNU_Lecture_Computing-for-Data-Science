@@ -13,6 +13,7 @@ struct Node {
 struct Node * createNode(struct Node * newNode, int data){
   newNode = (struct Node *) malloc(sizeof(struct Node));
   newNode->data = data;
+  newNode->next = NULL;
   return newNode;
 }
 
@@ -54,7 +55,37 @@ int main(int argc, char* argv[])
 
   /* Write your code here */
 
+  curr = head;
+  int currIn = 0;
+  int nextIn = 0;
 
+  for (int i = 0; i < length; i++) {
+    if (head->data == inputArr[i]) {
+      numConnected = numConnected + 1;
+      break;
+    }
+  }
+
+  while(curr->next) {
+    for (int i = 0; i < length; i++) {
+      if (curr->data == inputArr[i]) {
+        currIn = 1;
+        break;
+      }
+    }
+    for (int i = 0; i < length; i++) {
+      if (curr->next->data == inputArr[i]) {
+        nextIn = 1;
+        break;
+      }
+    }
+    if (currIn == 0 && nextIn == 1) {
+      numConnected = numConnected + 1;
+    }
+    curr = curr->next;
+    currIn = 0;
+    nextIn = 0;
+  }
 
 
 	/* Do not modify below */	
