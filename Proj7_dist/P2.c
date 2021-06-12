@@ -118,6 +118,8 @@ int main(int argc, char* argv[])
     success = -1;
   }
 
+  free(stack);
+
   /* Do not modify below */	
   printf("%d", success);
 
